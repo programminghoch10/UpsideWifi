@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UpsideWifi</string>
+    <string name="xposed_description">Turn the WiFi symbol upside down!</string>
+    <string-array name="scope">
+        <item>com.android.systemui</item>
+    </string-array>
+</resources>

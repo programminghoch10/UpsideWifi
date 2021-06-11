@@ -1,0 +1,2 @@
+-keep class com.programminghoch10.UpsideWifi.UpsideWifi {*;}
+-keep class de.robv.android.xposed.** {*;}
