@@ -1,5 +1,6 @@
 package com.programminghoch10.UpsideWifi;
 
+import android.os.Build;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
@@ -27,13 +28,13 @@ public class UpsideWifi implements IXposedHookInitPackageResources {
         if (!resparam.packageName.equals("com.android.systemui")) {
             return;
         }
-        resparam.res.hookLayout("com.android.systemui", "layout", "status_bar_wifi_group", new XC_LayoutInflated() {
+        String layoutName = android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? "status_bar_wifi_group" : "signal_cluster_view";
+        resparam.res.hookLayout("com.android.systemui", "layout", layoutName, new XC_LayoutInflated() {
             @Override
             public void handleLayoutInflated(LayoutInflatedParam liparam) throws Throwable {
-                wifiIndicator = (ImageView) liparam.view.findViewById(liparam.res.getIdentifier("wifi_signal", "id", "com.android.systemui"));
+                wifiIndicator = liparam.view.findViewById(liparam.res.getIdentifier("wifi_signal", "id", "com.android.systemui"));
                 wifiIndicator.startAnimation(rotate);
             }
         });
     }
-
 }
