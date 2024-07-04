@@ -1,27 +1,20 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    namespace  "com.programminghoch10.UpsideWifi"
+    compileSdk 30
 
     defaultConfig {
-        applicationId "com.programminghoch10.UpsideWifi"
-        minSdkVersion 14
-        targetSdkVersion 30
+        minSdk 14
+        targetSdk 30
         versionCode 3
         versionName "1.1.1"
-        resConfigs "en"
     }
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
-            proguardFiles 'proguard-rules.pro'
+            minifyEnabled false
         }
-    }
-
-    packagingOptions {
     }
 }
 
