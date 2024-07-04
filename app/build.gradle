@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     namespace  "com.programminghoch10.UpsideWifi"
-    compileSdk 30
+    compileSdk 34
 
     defaultConfig {
         minSdk 14
-        targetSdk 30
+        targetSdk 34
         versionCode 3
         versionName "1.1.1"
     }
